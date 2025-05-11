@@ -1,0 +1,188 @@
+@import "../../responsive.scss";
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+    a {
+        transition: all 0.4s ease;
+
+        &:hover {
+            scale: 1.1;
+        }
+
+        @include sm {
+            display: none;
+        }
+    }
+
+    .left {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 28px;
+
+                @include md {
+                    display: initial;
+                }
+            }
+        }
+
+        span {
+            // @include md {
+            //     display: none;
+            // }
+
+            @include sm {
+                display: initial;
+            }
+        }
+
+        .site-name {
+            @include md {
+                display: none;
+            }
+        }
+    }
+
+    .right {
+        flex: 2;
+        height: 100%;
+        // background-color: #fcf5f3;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        @include md {
+            background-color: transparent;
+        }
+
+        a {
+            padding: 12px 24px;
+            margin: 20px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            justify-content: center;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 20px;
+            }
+
+            span {
+                @include sm {
+                    display: none;
+                }
+            }
+
+            .profile {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            // .profile {
+            //     padding: 12px 24px;
+            //     background-color: #fece51;
+            //     cursor: pointer;
+            //     border: none;
+            //     position: relative;
+
+            //     .notification {
+            //         position: absolute;
+            //         top: -8px;
+            //         right: -8px;
+            //         background-color: red;
+            //         columns: white;
+            //         border-radius: 50%;
+            //         width: 24px;
+            //         height: 24px;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: center;
+            //     }
+            // }
+        }
+
+        .register {
+            overflow: hidden;
+            height: auto;
+            background-color: #fece51;
+
+            @include sm {
+                display: none;
+            }
+        }
+
+        .menuIcon {
+            display: none;
+            z-index: 999;
+
+            img {
+                width: 36px;
+                height: 36px;
+                cursor: pointer;
+            }
+
+            @include sm {
+                display: initial;
+            }
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            right: -50%;
+            display: none !important;
+            background-color: black;
+            color: white;
+            height: 100vh;
+            width: 50vw;
+            transition: all 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &.active {
+                right: 0%;
+                display: inline-flex !important;
+            }
+
+            a {
+                width: 90%;
+                text-align: center;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+
+            @include sm {
+                a {
+                    display: initial;
+                }
+            }
+        }
+    }
+}

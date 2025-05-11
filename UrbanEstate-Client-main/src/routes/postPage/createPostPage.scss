@@ -1,0 +1,185 @@
+@import "../../responsive.scss";
+
+.newPostPage {
+    height: 100%;
+    overflow: scroll;
+
+    .wrapper {
+        margin: 30px 20px 100px 0px;
+        padding-left: 5px;
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            .item {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                @include md {
+                    width: 47%;
+                }
+
+                @include sm {
+                    width: 100%;
+                }
+
+                label {
+                }
+
+                input,
+                textarea {
+                    padding: 20px;
+                    border-radius: 5px;
+                    border: 1px solid gray;
+                }
+
+                textarea {
+                    padding: 10px;
+                }
+
+                select {
+                    padding: 19px;
+                }
+
+                &.scale-full {
+                    width: 100%;
+                }
+            }
+
+            .sendButton {
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    width: 30%;
+                    height: 50px;
+
+                    border-radius: 5px;
+                    border: none;
+                    background-color: teal;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            .mapContainer {
+                width: 100%;
+                aspect-ratio: 8/2;
+
+                @include md {
+                    aspect-ratio: 8/3;
+                }
+
+                @include sm {
+                    aspect-ratio: 8/4;
+                }
+            }
+
+            .imagesContainer {
+                width: 100%;
+
+                .uploadedImage {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(8, 1fr);
+                    column-gap: 20px;
+                    margin-bottom: 10px;
+                    padding: 0 20px;
+
+                    @include md {
+                        grid-template-columns: repeat(6, 1fr);
+                    }
+
+                    @include sm {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                        border-radius: 10px;
+                        transition: all 0.4s ease;
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+
+                .imagesUpload {
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+
+                    .uploadContainer {
+                        width: 100%;
+                        aspect-ratio: 8/2;
+                        border-radius: 8px;
+                        border: 2px dashed #b0a8b9;
+                        background-color: white;
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        justify-content: center;
+                        align-items: center;
+
+                        @include md {
+                            aspect-ratio: 8/3;
+                        }
+
+                        @include sm {
+                            aspect-ratio: 8/4;
+                        }
+
+                        img {
+                            width: 50px;
+                            text-align: center;
+                        }
+
+                        input[type="file"] {
+                            display: none;
+                        }
+
+                        p {
+                            font-weight: bold;
+                            margin: 0 auto;
+                        }
+
+                        .error {
+                            font-weight: 600;
+                            color: red;
+                        }
+                    }
+
+                    .profileUpload:hover,
+                    .dragging {
+                        background-color: whitesmoke;
+                    }
+                }
+            }
+
+            .error {
+                font-weight: 600;
+                color: red;
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+form {
+    height: 100%;
+
+    .profileUpdate {
+        height: 100%;
+        display: flex;
+
+        .formContainer {
+            flex: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .leftForm {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    label {
+                    }
+
+                    input {
+                        padding: 20px;
+                        border-radius: 5px;
+                        border: 1px solid gray;
+                    }
+                }
+                button {
+                    padding: 20px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: teal;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .sideContainer {
+            flex: 2;
+            background-color: #fcf5f3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+
+            .avatar {
+                height: 100%;
+                width: 50%;
+                margin: 0 auto;
+                object-fit: cover;
+            }
+
+            .avatarUpload {
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                .profileUpload {
+                    width: 100%;
+                    aspect-ratio: 4/2;
+                    border-radius: 8px;
+                    border: 2px dashed #b0a8b9;
+                    background-color: white;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 50px;
+                        text-align: center;
+                    }
+
+                    input[type="file"] {
+                        display: none;
+                    }
+
+                    p {
+                        font-weight: bold;
+                        margin: 0 auto;
+                    }
+
+                    .error {
+                        font-weight: 600;
+                        color: red;
+                    }
+                }
+
+                button {
+                    padding: 20px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: teal;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .profileUpload:hover,
+                .dragging {
+                    background-color: whitesmoke;
+                }
+            }
+        }
+    }
+}
